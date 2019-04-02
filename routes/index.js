@@ -6,6 +6,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/ko', function (req, res) {
+  res.cookie('lang', 'ko');
+  res.redirect('back');
+});
+
+router.get('/en', function (req, res) {
+  res.cookie('lang', 'en');
+  res.redirect('back');
+});
+
 router.get('/index', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
