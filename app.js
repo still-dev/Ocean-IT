@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var i18n = require('./i18n');
+var i18n = require('./config/i18n');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

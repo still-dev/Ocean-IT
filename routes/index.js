@@ -1,9 +1,19 @@
 var express = require('express');
+var db = require('../config/db');
 var router = express.Router();
 
+var members_table;
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  var img_name;
+
+  db.query(`select * from members`, function (error, members) {
+    if(error){
+      throw error;
+    }
+    members_table = members;
+    res.render('index', {'members_table': members_table});
+  });
 });
 
 router.get('/ko', function (req, res) {
