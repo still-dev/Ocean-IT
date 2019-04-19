@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var membersRouter = require('./routes/members');
 
 var app = express();
 
@@ -24,6 +25,8 @@ app.use(i18n); //국가 설정
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/members', membersRouter);
+
 
 
 // catch 404 and forward to error handler

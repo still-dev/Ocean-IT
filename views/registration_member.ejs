@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>멤버 등록</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="subpage">
+
+<!-- Header -->
+<header id="header">
+    <div class="inner" style="margin: auto">
+        <h2 style="text-align: center; color:#FFFFFF;">멤버 등록</h2>
+    </div>
+</header>
+<div class="row">
+    <div class="-6u 12u$(small)">
+        <h2 style="text-align: center; margin-top: 10px">프로필 이미지</h2>
+        <div class="box person"  style="text-align: center">
+            <div class="image round">
+                <p>
+                <img src="/images/default-profile-image.png" alt="Member_New" width="300"/>
+                </p>
+            </div>
+            <div>
+            <a href="#" class="button special icon fa-search" style="text-align: center">업로드</a>
+            </div>
+        </div>
+    </div>
+    <div class="-6u 12u$(small)">
+        <h2 style="text-align: center; margin-top: 10px">기초 정보</h2>
+
+        <div style="margin:10px">
+            <h4>이름</h4>
+            <input type="text" name="name" id="name_ko" value="" placeholder="이름(한글)" />
+            <input type="text" name="name" id="name_en" value="" placeholder="이름(영문)" />
+        </div>
+        <div style="margin:10px">
+            <h4>소속</h4>
+            <input type="text" name="name" id="affiliation" value="" placeholder="호서대학교, etc" />
+        </div>
+        <div style="margin:10px">
+            <h4>직위</h4>
+            <input type="text" name="name" id="position" value="" placeholder="교수, 연구원, etc" />
+        </div>
+        <div style="margin:10px">
+            <h4>구내전화</h4>
+            <input type="text" name="name" id="interphone" value="" placeholder="041-000-0000"/>
+        </div>
+        <div style="margin:10px">
+            <h4>이메일</h4>
+            <input type="text" name="name" id="email" value="" placeholder="example@hoseo.ac.kr" />
+        </div>
+    </div>
+
+    <div class="-6u 12u$(small)">
+        <h2 style="text-align: center; margin-top: 10px">학적</h2>
+        <div class="table-wrapper" style="margin: 10px">
+            <table>
+                <thead>
+                <tr>
+                    <th>출신학교</th>
+                    <th>전공</th>
+                    <th>학위명</th>
+                </tr>
+                </thead>
+                <tbody id="member_degree_table">
+                <tr>
+                    <td>Item 1</td>
+                    <td>Ante turpis integer aliquet porttitor.</td>
+                    <td>29.99</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td>
+                        <input type="text" name="affiliation" id="input_affiliation" value="" placeholder="출신학교" />
+                    </td>
+                    <td>
+                        <input type="text" name="major" id="input_major" value="" placeholder="전공" />
+                    </td>
+                    <td>
+                        <input type="text" name="degree" id="input_degree" value="" placeholder="학위명" />
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div style="text-align: center; margin: 10px">
+            <a class="button alt icon fa-check" style="text-align: center" onclick="add_info_to_table()">학적 추가</a>
+        </div>
+    </div>
+</div>
+<%include includes/footer.ejs%>
+
+<script>
+    function add_info_to_table() {
+        var member_degree_table = document.getElementById('member_degree_table');
+        //학적 폼에서의 입력값 받아오기
+        var input_affiliation = document.getElementById('input_affiliation').value;
+        var input_major = document.getElementById('input_major').value;
+        var input_degree = document.getElementById('input_degree').value;
+        //폼에 정보가 다 들어가 있는지 확인
+        if(input_affiliation.length * input_major * input_degree !== 0){
+            var row = member_degree_table.insertRow(member_degree_table.rows.length);
+
+            var cell_affiliation = row.insertCell(0);
+            var cell_major = row.insertCell(1);
+            var cell_degree = row.insertCell(2);
+
+            cell_affiliation.innerHTML = `
+                    <td>${input_affiliation}</td>
+                    `;
+            cell_major.innerHTML = `
+                    <td>${input_major}</td>
+                    `;
+            cell_degree.innerHTML = `
+                    <td>${input_degree}</td>
+                    `;
+        }else{
+            alert('모든 정보를 기입해주세요.');
+        }
+    }
+</script>

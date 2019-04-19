@@ -1,0 +1,27 @@
+<%include includes/header.ejs%>
+<section id="two" class="wrapper style1 special">
+    <div class="inner">
+        <header>
+            <h2><%= __('index_h2_members')%></h2>
+            <p><%= __('index_p_members_summary')%></p>
+        </header>
+        <div class="flex flex-4">
+            <%members_table.forEach(function (members) {%>
+            <div class="box person">
+                <div class="image round">
+                    <%console.log(members)%>
+                    <img src="images/members/<%=members.profile_img%>" alt="Member <%=members.mid+1%>" />
+                </div>
+                <h3><%=members.name_ko%></h3>
+                <p><%=members.affiliation%></p>
+            </div>
+            <%})%>
+        </div>
+    </div>
+    <ul class="actions fit">
+        <li style="display: inline-block">
+            <a href="" class="button fit" onclick="window.open('/members/registration_member', '멤버 등록', 'width = 600, height = 800')">멤버 등록</a>
+        </li>
+    </ul>
+</section>
+<%include includes/footer.ejs%>

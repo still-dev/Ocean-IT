@@ -40,7 +40,14 @@ router.get('/introduction', function (req, res, next) {
 });
 
 router.get('/members', function (req, res, next) {
-  res.render('members');
+  var members_table;
+  db.query(`select * from members`, function (error, members) {
+    if(error){
+      throw error;
+    }
+    members_table = members;
+    res.render('members', {'members_table': members_table});
+  });
 });
 
 router.get('/research_fields', function (req, res, next) {
@@ -62,4 +69,5 @@ router.get('/generic', function (req, res, next) {
 router.get('/elements', function (req, res, next) {
   res.render('elements');
 });
+
 module.exports = router;

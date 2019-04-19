@@ -1,7 +1,19 @@
 {
+  "header_nav_home" : "Home",
+  "header_nav_introduction" : "Introduction",
+  "header_nav_members" : "Members",
+  "header_nav_research_fields" : "Research Fields",
+  "header_nav_research_results" : "Research Results",
+  "header_nav_question_board" : "Q&A",
+
   "index_title" : "Ocean IT Convergence Technology Research Lab",
-  "index_welcome_message" : "Ocean IT Research Institute We welcome you to visit our homepage",
-  "index_introduce_summary" : "As a pioneer in the development of shipbuilding offshore plant technology, our research institute is to solve the national pending problems by securing the capability of comprehensive research such as original technology development, application and practical research, and conducts creative research leading international standards, We are working to meet the demand for policy.",
+  "index_welcome_message" : "Ocean IT Research Institute<br>We welcome you to visit our homepage",
+  "index_introduce_summary" : "As a pioneer in the development of shipbuilding offshore plant technology, our research institute is to solve the national pending problems<br>by securing the capability of comprehensive research such as original technology development, application and practical research,<br>and conducts creative research leading international standards, We are working to meet the demand for policy.",
+  "introduction_h2_title" : "Introduction",
+  "introduction_p_title" : "\"Ocean IT Research Institute We welcome you to visit our homepage\"",
+  "introduction_h2" : "Ocean IT Research Institute",
+  "introduction_p" : "Our institute was opened in 1973 and has a history of more than 40 years. On January 1, 2014, it became the research institute of Hoseo University marine IT convergence technology.<br><br>As a pioneer in the development of shipbuilding offshore plant technology, our research institute is to solve the national pending problems by securing the capability of comprehensive research such as original technology development, application and practical research, and conducts creative research leading international standards, We are working to meet the demand for policy.<br><br>To this end, we are carrying out various research activities focusing on eco-friendly future ship technology, offshore plant engineering technology, marine accident response and marine transportation system technology, underwater robot and marine equipment technology.<br><br>In order to strengthen industrial competitiveness of the shipbuilding industry, which is the driving force of national economic growth, and the offshore plant industry, which is a new growth food industry, and to enhance national competitiveness, it is a leading research institute for marine plant. We will do our best to contribute to the realization of the creative economy by contributing to the national economic growth, becoming the cornerstone of shipbuilding marine plant industry development by preemptively responding to international regulatory response.",
+  "introduction_direction" : "Direction",
   "index_h2_research_fields" : "Research Fields",
   "index_h2_members" : "Members Introduction",
   "index_p_members_summary" : "Introduce Members of Ocean IT Convergence Technology Research Lab!"
