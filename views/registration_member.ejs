@@ -19,7 +19,7 @@
         <h2 style="text-align: center; color:#FFFFFF;">멤버 등록</h2>
     </div>
 </header>
-<form id="form_submit" action="/members/registration_member" method="post" enctype="multipart/form-data">
+<form id="form_submit" action="" method="post" enctype="multipart/form-data">
 <div class="row">
     <div class="-6u 12u$(small)">
         <h2 style="text-align: center; margin-top: 10px">프로필 이미지</h2>
@@ -38,24 +38,24 @@
     <div class="-6u 12u$(small)">
         <h2 style="text-align: center; margin-top: 10px">기초 정보</h2>
         <h4 style="text-align: center; margin-top: 10px">(*)표시는 필수 입력사항입니다.</h4>
-        <div style="margin:10px">
+        <div style="margin:20px">
             <h4>이름*</h4>
             <input type="text" name="name_ko" id="name_ko" value="" placeholder="이름(한글)" />
             <input type="text" name="name_en" id="name_en" value="" placeholder="이름(영문)" />
         </div>
-        <div style="margin:10px">
+        <div style="margin:20px">
             <h4>소속*</h4>
             <input type="text" name="c_affiliation" id="affiliation" value="" placeholder="호서대학교, etc" />
         </div>
-        <div style="margin:10px">
+        <div style="margin:20px">
             <h4>직위*</h4>
             <input type="text" name="c_position" id="position" value="" placeholder="교수, 연구원, etc" />
         </div>
-        <div style="margin:10px">
+        <div style="margin:20px">
             <h4>구내전화*</h4>
             <input type="text" name="c_interphone" id="interphone" value="" placeholder="041-000-0000"/>
         </div>
-        <div style="margin:10px">
+        <div style="margin:20px">
             <h4>이메일*</h4>
             <input type="text" name="email" id="email" value="" placeholder="example@hoseo.ac.kr" />
         </div>
@@ -63,7 +63,7 @@
 
     <div class="-6u 12u$(small)">
         <h2 style="text-align: center; margin-top: 10px">학적</h2>
-        <div class="table-wrapper" style="margin: 10px">
+        <div class="table-wrapper" style="margin: 20px">
             <table>
                 <thead>
                 <tr>
@@ -92,7 +92,7 @@
         <div style="text-align: center; margin: 10px">
             <a class="button alt icon fa-check" style="text-align: center" onclick="add_info_to_table()">학적 추가</a>
         </div>
-        <div style="text-align: center; margin: 30px 10px 30px">
+        <div style="text-align: center; margin: 30px 20px 30px">
             <input class="button special fit" style="text-align: center" type="button" value="등록하기" onclick="submit_popup()"/>
         </div>
     </div>
@@ -148,12 +148,30 @@
     }
 
     function submit_popup() {
-        if()
-        if(confirm("멤버를 등록하시겠습니까?") === true){
-            document.getElementById('form_submit').submit();
-            alert("등록되었습니다")
+        if(
+                __checkNull(document.getElementById('name_ko').value)&&
+                __checkNull(document.getElementById('name_en').value)&&
+                __checkNull(document.getElementById('affiliation').value)&&
+                __checkNull(document.getElementById('position').value)&&
+                __checkNull(document.getElementById('interphone').value)&&
+                __checkNull(document.getElementById('email').value)
+        ){
+            if(confirm("멤버를 등록하시겠습니까?") === true){
+                document.getElementById('form_submit').submit();
+                alert("등록되었습니다");
+            }else{
+                return false;
+            }
         }else{
+            alert("기초정보를 모두 기입해주세요.");
+        }
+
+    }
+    function __checkNull(value) {
+        if(value.replace(/^\s*/,'') === ''){
             return false;
+        }else{
+            return true;
         }
     }
 </script>

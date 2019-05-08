@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>상세 정보</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="subpage">
+
+<!-- Header -->
+<header id="header">
+    <div class="inner" style="margin: auto">
+        <h2 style="text-align: center; color:#FFFFFF;">상세 정보</h2>
+    </div>
+</header>
+    <div class="row">
+        <div class="-6u 12u$(small)">
+            <div class="box person"  style="text-align: center">
+                <div class="image round">
+                    <p>
+                        <img src="/images/members/<%=member_info[0].profile_img%>" id= "profile_image" alt="Member_Info" width="300"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="-6u 12u$(small)">
+            <h2 style="text-align: center; margin-top: 10px">기초 정보</h2>
+            <div style="margin:20px">
+                <h4>이름</h4>
+                <input type="text" name="name_ko" id="name_ko" value="<%=member_info[0].name_ko%>" placeholder="이름(한글)" disabled/>
+                <input type="text" name="name_en" id="name_en" value="<%=member_info[0].name_en%>" placeholder="이름(영문)" disabled/>
+            </div>
+            <div style="margin:20px">
+                <h4>소속</h4>
+                <input type="text" name="c_affiliation" id="affiliation" value="<%=member_info[0].affiliation%>" placeholder="호서대학교, etc" disabled/>
+            </div>
+            <div style="margin:20px">
+                <h4>직위</h4>
+                <input type="text" name="c_position" id="position" value="<%=member_info[0].position%>" placeholder="교수, 연구원, etc" disabled/>
+            </div>
+            <div style="margin:20px">
+                <h4>구내전화</h4>
+                <input type="text" name="c_interphone" id="interphone" value="<%=member_info[0].interphone%>" placeholder="041-000-0000" disabled/>
+            </div>
+            <div style="margin:20px">
+                <h4>이메일</h4>
+                <input type="text" name="email" id="email" value="email" placeholder="example@hoseo.ac.kr" disabled/>
+            </div>
+        </div>
+
+        <div class="-6u 12u$(small)">
+            <h2 style="text-align: center; margin-top: 10px">학적</h2>
+            <div class="table-wrapper" style="margin: 20px">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>출신학교</th>
+                        <th>전공</th>
+                        <th>학위명</th>
+                    </tr>
+                    </thead>
+                    <tbody id="member_degree_table">
+                    <%if(member_degree !== undefined){%>
+                        <%member_degree.forEach(function (info) {%>
+                    <tr>
+                        <td>
+                            <%=info.affiliation%>
+                        </td>
+                        <td>
+                            <%=info.major%>
+                        </td>
+                        <td>
+                            <%=info.degree%>
+                        </td>
+                    </tr>
+                        <%})%>
+                    <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center; margin: 30px 20px 30px">
+                <input class="button special fit" style="text-align: center" type="button" value="수정하기"/>
+            </div>
+        </div>
+    </div>
+
+<%include includes/footer.ejs%>
