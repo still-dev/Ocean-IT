@@ -1,0 +1,31 @@
+<%include includes/header.ejs%>
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="align-center">
+            <h2>문의게시판</h2>
+            <p> 게시글 작성 </p>
+        </header>
+        <div class="table-wrapper" style="overflow-y: hidden; overflow-x: hidden;">
+            <form method="post" action="#">
+                <div class="row uniform">
+                    <div class="6u 12u$(xsmall)">
+                        제목<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        작성자<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+
+                    <div class="12u$">
+                        내용<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
+                    </div>
+
+                    <div style="float:right">
+                        <input type="reset" value="모두 다시 쓰기" class="alt" />
+                        <input type="submit" class="button special" value="작성 완료" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<%include includes/footer.ejs%>

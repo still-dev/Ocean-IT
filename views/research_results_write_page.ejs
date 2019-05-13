@@ -1,0 +1,50 @@
+<%include includes/header.ejs%>
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="align-center">
+            <h2>연구 성과</h2>
+            <p> 게시글 작성 </p>
+        </header>
+        <div class="table-wrapper" style="overflow-y: hidden; overflow-x: hidden;">
+            <form method="post" action="#">
+                <div class="row uniform">
+                    <div class="6u 12u$(xsmall)">
+                        학회/학술지명<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        주저자<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                        발표 매체<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        국가명<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                        논문명(한글)<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        논문명(영문)<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                        발표일<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        구분<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                        관련 과제<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        초록<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div style="float:right">
+                        <input type="reset" value="모두 다시 쓰기" class="alt" />
+                        <input type="submit" class="button special" value="작성 완료" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<%include includes/footer.ejs%>

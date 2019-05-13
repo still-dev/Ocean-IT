@@ -8,7 +8,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var introductionRouter = require('./routes/introduction');
 var membersRouter = require('./routes/members');
+var researchFieldsRouter = require('./routes/research_fields');
+var researchResultsRouter = require('./routes/research_results');
+var questionBoardRouter = require('./routes/question_board');
 
 var app = express();
 
@@ -28,8 +32,11 @@ app.use(i18n); //국가 설정
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/introduction', introductionRouter);
 app.use('/members', membersRouter);
-
+app.use('/research_fields', researchFieldsRouter);
+app.use('/research_results', researchResultsRouter);
+app.use('/question_board', questionBoardRouter);
 
 
 // catch 404 and forward to error handler

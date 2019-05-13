@@ -1,0 +1,62 @@
+<%include includes/header.ejs%>
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="align-center">
+            <h2>연구 분야</h2>
+            <p> 게시글 작성 </p>
+        </header>
+        <div class="table-wrapper" style="overflow-y: hidden; overflow-x: hidden;">
+            <form method="post" action="#">
+                <div class="row uniform">
+                    <div class="6u 12u$(xsmall)">
+                        과제목적분류<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        지원기관<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                        과제명(한글)<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        과제명(영문)<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u 12u$(xsmall)">
+                        연구 기간<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        연구 책임자<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+
+                    <div class="12u$">
+                        연구 목표<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
+                        연구 내용<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
+                        기대 성과<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
+                    </div>
+
+                    <div class="4u 12u$(small)" style="width:150px">
+                        <input type="radio" id="priority-low" name="priority" checked>
+                        <label for="priority-low">논문</label>
+                    </div>
+
+                    <div class="4u 12u$(small)" style="width:150px">
+                        <input type="radio" id="priority-normal" name="priority" checked>
+                        <label for="priority-normal">특허</label>
+                    </div>
+                    <div class="4u 12u$(small)" style="width:150px">
+                        <input type="radio" id="priority-high" name="priority">
+                        <label for="priority-high">보고서</label>
+                    </div>
+                    <div class="6u$ 12u$(xsmall)" >
+                        <input style="width:1fr" type="text" name="" id="" value="" placeholder="예시" />
+                    </div>
+
+                    <div style="float:right">
+                        <input type="reset" value="모두 다시 쓰기" class="alt" />
+                        <input type="submit" class="button special" value="작성 완료" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<%include includes/footer.ejs%>

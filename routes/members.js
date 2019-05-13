@@ -21,6 +21,17 @@ var upload = multer({
 var router = express.Router();
 
 /* GET users listing. */
+router.get('/', function (req, res, next) {
+    var members_table;
+    db.query(`select * from members`, function (error, members) {
+        if(error){
+            throw error;
+        }
+        members_table = members;
+        res.render('members', {'members_table': members_table});
+    });
+});
+
 router.get('/registration_member', function(req, res, next) {
     res.render('registration_member');
 });
