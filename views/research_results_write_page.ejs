@@ -3,45 +3,60 @@
     <div class="inner">
         <header class="align-center">
             <h2>연구 성과</h2>
-            <p> 게시글 작성 </p>
+            <p> 게시글 작성</p>
         </header>
         <div class="table-wrapper" style="overflow-y: hidden; overflow-x: hidden;">
-            <form method="post" action="#">
+            <form method="post" action="/">
                 <div class="row uniform">
-                    <div class="6u 12u$(xsmall)">
-                        학회/학술지명<input type="text" name="name" id="name" value="" placeholder="예시" />
+                    <div class="4u 12u$(medium)">
+                        <h4>구분</h4>
+                        <input type="radio" id="priority-low" name="priority" checked>
+                        <label for="priority-low">논문</label>
+                        <input type="radio" id="priority-normal" name="priority" checked>
+                        <label for="priority-normal">특허</label>
+                        <input type="radio" id="priority-high" name="priority">
+                        <label for="priority-high">발표</label>
                     </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        주저자<input type="email" name="email" id="email" value="" placeholder="예시" />
-                    </div>
-                    <div class="6u 12u$(xsmall)">
-                        발표 매체<input type="text" name="name" id="name" value="" placeholder="예시" />
-                    </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        국가명<input type="email" name="email" id="email" value="" placeholder="예시" />
-                    </div>
-                    <div class="6u 12u$(xsmall)">
-                        논문명(한글)<input type="text" name="name" id="name" value="" placeholder="예시" />
-                    </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        논문명(영문)<input type="email" name="email" id="email" value="" placeholder="예시" />
+                    <div class="4u$ 12u$(medium)">
+                        <h4>발표일</h4><input type="date" value=""/>
                     </div>
                     <div class="6u 12u$(xsmall)">
-                        발표일<input type="text" name="name" id="name" value="" placeholder="예시" />
+                        <h4>학회/학술지명</h4><input type="text" name="name" id="name" value="" placeholder="예시" />
                     </div>
                     <div class="6u$ 12u$(xsmall)">
-                        구분<input type="email" name="email" id="email" value="" placeholder="예시" />
+                        <h4>주저자</h4><input type="email" name="email" id="email" value="" placeholder="예시" />
                     </div>
                     <div class="6u 12u$(xsmall)">
-                        관련 과제<input type="text" name="name" id="name" value="" placeholder="예시" />
+                        <h4>논문명(한글)</h4><input type="text" name="name" id="name" value="" placeholder="예시" />
                     </div>
                     <div class="6u$ 12u$(xsmall)">
-                        초록<input type="email" name="email" id="email" value="" placeholder="예시" />
+                        <h4>논문명(영문)</h4><input type="email" name="email" id="email" value="" placeholder="예시" />
                     </div>
-                    <div style="float:right">
-                        <input type="reset" value="모두 다시 쓰기" class="alt" />
-                        <input type="submit" class="button special" value="작성 완료" />
+                    <div class="6u 12u$(xsmall)">
+                        <h4>초록(한글)</h4><input type="email" name="email" id="email" value="" placeholder="예시" />
                     </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <h4>초록(영문)</h4><input type="email" name="email" id="email" value="" placeholder="예시" />
+                    </div>
+                    <div class="4u 12u$(medium)">
+                        <h4>발표 매체</h4><input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+                    <div class="4u 12u$(medium)">
+                        <h4>국가명</h4>
+                        <select name="category" id="category" >
+                            <option value="">국가 선택</option>
+                            <option value="대한민국">대한민국</option>
+                            <option value="미국">미국</option>
+                        </select>
+                    </div>
+                    <div class="4u 12u$(medium)">
+                        <h4>관련 과제</h4><input type="text" name="name" id="name" value="" placeholder="예시" />
+                    </div>
+
+                </div>
+                <br>
+                <div style="float:right">
+                    <input type="submit" class="button special" value="작성 완료" />
                 </div>
             </form>
         </div>

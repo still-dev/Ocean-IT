@@ -8,50 +8,154 @@
         <div class="table-wrapper" style="overflow-y: hidden; overflow-x: hidden;">
             <form method="post" action="#">
                 <div class="row uniform">
+
+                    <div class="4u 12u$(medium)">
+                        <h4>연구 기간</h4><input type="date" value=""/> ~ <input type="date" value=""/>
+                    </div>
+                    <div class="4u 12u$(medium)" style="width:300px">
+                        <h4>과제목적분류</h4>
+                        <script>
+                            //직접 입력 시 작동.
+                            function clicks(obj) {
+                                switch (obj.value) {
+                                    case "0" :
+                                        myself.style.visibility = "visible";
+                                        break;
+                                    default  :
+                                        myself.style.visibility = "hidden";
+                                        break;
+                                }
+                            }
+                        </script>
+                        <select name="category" id="category" onchange=clicks(this) >
+                            <option value="">선택하세요</option>
+                            <option value="1">위탁</option>
+                            <option value="2">협동</option>
+                            <option value="3">용역</option>
+                            <option value="4">공동</option>
+                            <option value="5">주관</option>
+                            <option value="0">직접 입력</option>
+                        </select>
+                    </div>
+                    <div class="4u 12u$(medium)">
+                        <h4>　</h4>
+                        <div id="myself" style="visibility:hidden">
+                            <input type="text" name="a" value="" style="width:200px; display:inline" placeholder="한글" />
+                            <input type="text" name="a" value="" style="width:200px; display:inline" placeholder="영문" />
+                        </div>
+                    </div>
                     <div class="6u 12u$(xsmall)">
-                        과제목적분류<input type="text" name="name" id="name" value="" placeholder="예시" />
+                        <h4>과제명(한글)</h4><input type="text" name="name" id="name" value="" placeholder="예시" />
                     </div>
                     <div class="6u$ 12u$(xsmall)">
-                        지원기관<input type="email" name="email" id="email" value="" placeholder="예시" />
+                        <h4>과제명(영문)</h4><input type="text" name="email" id="email" value="" placeholder="예시" />
                     </div>
                     <div class="6u 12u$(xsmall)">
-                        과제명(한글)<input type="text" name="name" id="name" value="" placeholder="예시" />
+                        <h4>지원기관</h4><input type="text" name="email" id="email" value="" placeholder="예시" />
                     </div>
                     <div class="6u$ 12u$(xsmall)">
-                        과제명(영문)<input type="email" name="email" id="email" value="" placeholder="예시" />
-                    </div>
-                    <div class="6u 12u$(xsmall)">
-                        연구 기간<input type="text" name="name" id="name" value="" placeholder="예시" />
-                    </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        연구 책임자<input type="email" name="email" id="email" value="" placeholder="예시" />
+                        <h4>연구 책임자</h4><input type="text" name="email" id="email" value="" placeholder="예시" />
                     </div>
 
                     <div class="12u$">
-                        연구 목표<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
-                        연구 내용<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
-                        기대 성과<textarea name="message" id="message" placeholder="예시" rows="6"></textarea><br>
-                    </div>
+                        <div class="4u 12u$(medium)" style="width:300px">
+                            <h4>연구 목표</h4>
+                            <script>
+                                //직접 입력 시 작동.
+                                function click1(obj) {
+                                    switch (obj.value) {
+                                        case "0" :
+                                            txtbox0.style.display = "";
+                                            txtbox1.style.display = "none";
+                                            break;
+                                        case "1" :
+                                            txtbox1.style.display = "";
+                                            txtbox0.style.display = "none";
+                                            break;
+                                        case "2"  :
+                                            txtbox1.style.display = "";
+                                            txtbox0.style.display = "";
+                                            break;
+                                    }
+                                }
+                            </script>
+                            <select name="category" id="category" onchange=click1(this) >
+                                <option value="">선택하세요</option>
+                                <option value="0">한글</option>
+                                <option value="1">영문</option>
+                                <option value="2">한글 + 영문</option>
+                            </select>
+                        </div>
+                        <br>
+                        <textarea name="message" id="txtbox0" placeholder="예시(한글)" rows="5" style="resize: none;" ></textarea>
+                        <textarea name="message" id="txtbox1" placeholder="예시(영문)" rows="5" style="resize: none; display:none "></textarea><br>
 
-                    <div class="4u 12u$(small)" style="width:150px">
-                        <input type="radio" id="priority-low" name="priority" checked>
-                        <label for="priority-low">논문</label>
-                    </div>
+                        <div class="4u 12u$(medium)" style="width:300px">
+                            <h4>연구 내용</h4>
+                            <script>
+                                //직접 입력 시 작동.
+                                function click2(obj) {
+                                    switch (obj.value) {
+                                        case "0" :
+                                            txtbox2.style.display = "";
+                                            txtbox3.style.display = "none";
+                                            break;
+                                        case "1" :
+                                            txtbox3.style.display = "";
+                                            txtbox2.style.display = "none";
+                                            break;
+                                        case "2" :
+                                            txtbox3.style.display = "";
+                                            txtbox2.style.display = "";
+                                            break;
+                                    }
+                                }
+                            </script>
+                            <select name="category" id="category" onchange=click2(this) >
+                                <option value="">선택하세요</option>
+                                <option value="0">한글</option>
+                                <option value="1">영문</option>
+                                <option value="2">한글 + 영문</option>
+                            </select>
+                        </div>
+                        <br>
+                        <textarea name="message" id="txtbox2" placeholder="예시(한글)" rows="5" style="resize: none;" ></textarea>
+                        <textarea name="message" id="txtbox3" placeholder="예시(영문)" rows="5" style="resize: none; display:none "></textarea><br>
 
-                    <div class="4u 12u$(small)" style="width:150px">
-                        <input type="radio" id="priority-normal" name="priority" checked>
-                        <label for="priority-normal">특허</label>
-                    </div>
-                    <div class="4u 12u$(small)" style="width:150px">
-                        <input type="radio" id="priority-high" name="priority">
-                        <label for="priority-high">보고서</label>
-                    </div>
-                    <div class="6u$ 12u$(xsmall)" >
-                        <input style="width:1fr" type="text" name="" id="" value="" placeholder="예시" />
+                        <div class="4u 12u$(medium)" style="width:300px">
+                            <h4>기대 성과</h4>
+                            <script>
+                                //직접 입력 시 작동.
+                                function click3(obj) {
+                                    switch (obj.value) {
+                                        case "0" :
+                                            txtbox4.style.display = "";
+                                            txtbox5.style.display = "none";
+                                            break;
+                                        case "1" :
+                                            txtbox5.style.display = "";
+                                            txtbox4.style.display = "none";
+                                            break;
+                                        case "2" :
+                                            txtbox4.style.display = "";
+                                            txtbox5.style.display = "";
+                                            break;
+                                    }
+                                }
+                            </script>
+                            <select name="category" id="category" onchange=click3(this) >
+                                <option value="">선택하세요</option>
+                                <option value="0">한글</option>
+                                <option value="1">영문</option>
+                                <option value="2">한글 + 영문</option>
+                            </select>
+                        </div>
+                        <br>
+                        <textarea name="message" id="txtbox4" placeholder="예시(한글)" rows="5" style="resize: none;" ></textarea>
+                        <textarea name="message" id="txtbox5" placeholder="예시(영문)" rows="5" style="resize: none; display:none "></textarea><br>
                     </div>
 
                     <div style="float:right">
-                        <input type="reset" value="모두 다시 쓰기" class="alt" />
                         <input type="submit" class="button special" value="작성 완료" />
                     </div>
                 </div>
