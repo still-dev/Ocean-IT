@@ -1,23 +1,29 @@
 var express = require('express');
 var db = require('../config/db');
 var router = express.Router();
-var research_fields_table;
-var rows;
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.redirect('research_fields/page/1');
 });
 
 router.get('/page/:num', function(req, res, next) {
-    /*db.query(`select * from research_fields`, function (error, fileds) {
+    db.query(`select * from research_fields`, function (error, fields) {
         if(error){
             throw error;
         }
-        research_fields_table = fields;
-        rows = fields.coun
-        res.render('index', {'research_fields_table': research_fields_table});
-    });*/
-    res.render('research_fields');
+        res.render('research_fields', {'research_fields_table': fields, 'page_num' : req.params.num});
+    });
+});
+
+router.get('/detail/:num', function(req, res, next) {
+    db.query(`select * from research_fields where rid = ?`, req.params.num, function (error, field) {
+        if(error){
+            throw error;
+        }
+        //console.log(field);
+        res.render('research_fields_detail', {'field': field});
+    });
 });
 
 router.get('/write', function(req, res, next) {

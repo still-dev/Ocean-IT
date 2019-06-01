@@ -14,6 +14,7 @@ var researchFieldsRouter = require('./routes/research_fields');
 var researchResultsRouter = require('./routes/research_results');
 var questionBoardRouter = require('./routes/question_board');
 
+//var newRouter = require('./routes/routes 폴더 내부의 js파일');
 var app = express();
 
 var i18n = require('./config/i18n');
@@ -38,7 +39,7 @@ app.use('/research_fields', researchFieldsRouter);
 app.use('/research_results', researchResultsRouter);
 app.use('/question_board', questionBoardRouter);
 
-
+//app.use('/서버 기본 주소 다음으로 나오는 url을 입력한다.', newRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

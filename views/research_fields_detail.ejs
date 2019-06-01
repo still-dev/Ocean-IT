@@ -1,4 +1,5 @@
 <%include includes/header.ejs%>
+<%var row = field[0];%>
 <section id="main" class="wrapper">
     <div class="inner">
         <header class="align-center">
@@ -6,71 +7,58 @@
             <p>연구소의 연구분야 게시판</p>
         </header>
         <hr class="major"/>
-        <h3 class="align-center">수중광역 ~ <제목></h3>
+        <h3 class="align-center"></h3>
         <div class="table-wrapper">
             <table class="align-center">
                 <thead>
                 <div class="table-wrapper">
                     <table class="alt">
-                        <tbody>
+                        <tbody class="align-center">
                         <tr>
-                            <td>사업명</td>
-                            <td colspan="4">해양장비개발 및 인프라구축사업</td>
+                            <td >사업명</td>
+                            <td class="align-left" colspan="4"><%= row.research_name_ko%></td>
                         </tr>
                         <tr>
                             <td>주관기관</td>
-                            <td>한국해양과학기술원</td>
-                            <td rowspan="2" class="align-center" style="vertical-align:middle;">연구책임자</td>
+                            <td class="align-left">해양IT 연구소</td>
+                            <td rowspan="2" style="vertical-align:middle;">연구책임자</td>
                             <td>성명</td>
-                            <td>임용곤</td>
+                            <td class="align-left"><%= row.research_charge_ko%></td>
                         </tr>
                         <tr>
-                            <td>협동기관</td>
-                            <td> ~ </td>
+                            <td>지원기관</td>
+                            <td class="align-left"></td>
                             <td>소속</td>
-                            <td>한국해양과학기술원</td>
-                        </tr>
-                        <tr>
-                            <td>위탁연구기관</td>
-                            <td>호서대학교 산학협력단, 강릉원주대학교 산학협력단</td>
-                            <td>참여 기업</td>
-                            <td colspan="2">경원산업주식회사</td>
+                            <td class="align-left"><%= row.support_organization_ko%></td>
                         </tr>
                         <tr>
                             <td>연구 기간</td>
-                            <td>2012.08 ~ 2021.07</td>
+                            <td class="align-left"><%=row.date_start + " ~ " + row.date_end%></td>
                             <td>연구진행상태</td>
-                            <td colspan="2">연구 진행중</td>
+                            <td class="align-left" colspan="2">연구 진행중</td>
                         </tr>
                         <tr>
                             <td>연구 목표</td>
-                            <td colspan="4">수중에서 자유로운 정보교환</td>
+                            <td colspan="4" class="align-left"><%= row.research_purpose_ko%></td>
                         </tr>
                         <tr>
                             <td>연구 내용</td>
-                            <td colspan="4">수중이동 그룹 내 고속통신 네트워크</td>
-                        </tr>
-                        <tr>
-                            <td>연구개발결과</td>
-                            <td colspan="4">~</td>
+                            <td colspan="4" class="align-left"><%= row.research_contents_ko%></td>
                         </tr>
                         <tr>
                             <td>연구 성과</td>
-                            <td colspan="4">~~</td>
-                        </tr>
-                        <tr>
-                            <td>활용계획 및 기대효과</td>
-                            <td colspan="4">해양공간 및 자원개발~</td>
+                            <td colspan="4" class="align-left"><%= row.research_expected_ko%></td>
                         </tr>
 
                         </tbody>
                     </table>
                 </div>
                 <div style="float:right">
-                    <a href="research_results" class="button">목록</a>
+                    <a href="/research_fields/page/1" class="button">목록</a>
                 </div>
+                </thead>
+            </table>
         </div>
-    </div>
     </div>
 </section>
 <%include includes/footer.ejs%>
