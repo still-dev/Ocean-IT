@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var multer = require('multer');
+var multer = require('multer'); //post response 관련 모듈
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
